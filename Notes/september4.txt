@@ -1,0 +1,19 @@
+// CIDM-4382 Notes
+    - Septemeber 4, 2019
+
+Tool will be needed to code properly
+    - Node LTS (Batteries not included)
+    - MongoDB
+    - 
+
+Key Words
+    Depricated - In IT, deprecation means that although something is available or allowed, 
+        it is not recommended or that, in the case where something must be used, to say it is 
+        deprecated means that its failings are recognized.
+    
+https://semver.org/
+
+https://www.npmjs.com/package/express
+
+https://docs.npmjs.com/files/package.json
+

@@ -1,0 +1,105 @@
+// CIDM-4382 Notes
+    - August 26, 2019
+
+https://gist.github.com/MJW3BB/ee50997cb7421006e1bf65ab7d44ecbd
+
++ Information is a road and a wagon
+    - The infrastrucutre is important, as is what travels on the road.
+    - They are both important and both give eachother their value.
+
++ M.E.A.N.
+    - Swap A with R for React
+
++ 1960
+    - NATO, U.S, other agencies became interested in logistics
+    - Based off need for logistics and supply chain during WWII
+    - Most interstates in the U.S were made for quick transportation from and to military bases/warehouse/installation
+    - NATO became interested in making computers communicate in order to expedite communications, launch missiles, space missions, etc...
+    - How does the presidents big red button communicate with remote missile launch systems?
+    - A network was needed in order to provide proper infrastructure for weapons and distribution.
+
++ Morse Code's Cousing...Binary
+    - In morse code, a beep meant a signal, no beep meant no signal
+    - 1 beep is on, no beep is off
+    - from 1930-1960's used vacumm tubes and had little to no microprocessor
+    - von neumann machine
+    - 4 bits = 1 nibble
+    - 8 bits = 1 byte
+
++ Hexidecimall
+    - Most people are used to reading numbers this way (left to right)
+    - Computers read larger numbers for every slot of 8 bits each represents a number
+    - the 8 values are 1,2,4,8,16,32,64,128
+        * If i wanted to communicate a value of say 97, i would enable 64,32,1 with a 1 and all other calues as a 0
+    - MAC addresses are specified hexidecimally
+    - Binary is used to specify an IP addresses
+
++ Protocol
+    - If everyone in a room speaks to eachother at the same time it becomes noise that cannot be understood.
+    - A protocal specifies who speaks who, when, and how.
+    - UDP, TCP, HTTP, etc... are methods or tramsitting data with specified parameters and finding items on the internet
+
++ ASCII (American Standard for Informaton Interchange)
+    - We had a need for netowrking computers with a standard operating procedure (S.O.P)
+    - The internet came from the military's need for discrete identifiers such IP and MAC. 
+    - The impact of this transformed the world. 
+        + Commerical, Social, Cultural, etc...
+    - Every machine can be identified with a hexidecimal address.
+    - https://www.submarinecablemap.com/
+
++ 1970-1980
+    - Most terminals were just a command line interface (C.L.I)
+    - 80x30 (Based of printers)
+    - Personal computing became a popular items
+    - A device was needed to demodulate data to make it readable
+    - Used the phone line or cable modem to transmit data through the lines
+
++ 1990
+    - The internet became popular 
+    - HTML, HTTP protocols
+    - Graphical User Interfaces (G.U.I)
+    - Ex; https://en.wikipedia.org/wiki/World_Wide_Web
+    - What if a could format a document that forced the page to present itself as a webpage or article 
+        * HTML encoding
+    - Anything could be encoded with the proper protocal.
+    - Now we can markup documents, tramit data, fetch resources, 
+    - Uniform Resource Locator (U.R.L)
+
++ Interfaces
+    - Created with HTML
+        * Everything you do including search engine optimization (S.E.O)
+        * A functional utilitarian expierience (easy to find)
+        * Predacated by cascading style sheets (C.S.S)
+            ^ How is it placed on the page, how does it behave?
+    - Located with URL
+    - What is shown to a user is the FRONT-END 
+    - WHat is made by the developer is the BACK-END
+    - You cannot have a front-end without a back-end
+
++ JavaScript (J.S)
+    - The need to work in a web browser is high
+    - Created by Brendan Eich
+    - While PHP and SQL can also be used, they are more tradition and require more work and maintenance
+    - JS is easy to use and modern at the current time if these notes.
+
++ https://www.ultratools.com/tools/traceRoute
+    - A tool that finds how many hops on the internet it takes to reach a destination
+
++ M.E.A.N
+    - What if we could use JS on the back-end instead of PHP? What about JS on the front-end?
+    - We will learn Node and Node Package Management System
+
++ NET 2.0
+    - What if we could refresh on certain parts of the webpages?
+    - HTTP XML 
+
++ Tools
+    - VS Code 
+    - Electron (Converts JS code written for HTML into a desktop application)
+    - Apache (HTTP Server) Or NGINX
+    - PHP will be handled by NODE and be entirely JavaScript
+    - Mongo Express Angular Node (M.E.A.N)
+    - TypeScript 
+
+
+

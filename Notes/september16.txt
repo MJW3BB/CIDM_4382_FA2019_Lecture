@@ -1,0 +1,17 @@
+// CIDM-4382 Notes
+    - September 16, 2019
+
+1) GitHub
+2) In Class
+3) Express + Pug (Forms)
+
+Know how to add the remote (or use GitKraken)
+
+Make sure to have a repo for in class and homework
+*Make sure to update README often
+
+express -- help
+
+*Windows 
+ - Edit system environment variables to add npm
+ 

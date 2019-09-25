@@ -1,0 +1,206 @@
+// CIDM-4382 Notes
+    - Septemeber 25, 2019
+
+Goto https://words.bighugelabs.com/ and download/ create key
+
+Objective is to use Simon and Clives code and be introduced to Mongo, 
+    which extracts data from a DB and places into application
+
+- Eventually we will have a project assigned to us by Dr. Babb.
+- We will also create our own project later on as well
+
+My Big Huge Thesaurus Key Info
+-------------------------------
+    API Key
+    Important! Keep Your API key and API URLs secret. Anyone who knows them can make make API requests that will be counted against your account.
+
+    Your API key is c5c1f541a24578435c85beb53f713563
+
+    Sample REST URLs
+    Plain text
+    https://words.bighugelabs.com/api/2/c5c1f541a24578435c85beb53f713563/word/
+
+    XML
+    https://words.bighugelabs.com/api/2/c5c1f541a24578435c85beb53f713563/word/xml
+
+    JSON
+    https://words.bighugelabs.com/api/2/c5c1f541a24578435c85beb53f713563/word/json
+
+    Serialized PHP
+    https://words.bighugelabs.com/api/2/c5c1f541a24578435c85beb53f713563/word/php
+
+- Serendipity favors the prepared
+
+download babs "nickname code" from his repo https://github.com/ahuimanu/CIDM4382-Fall2019.git
+
+Install needed dependencies (use sudo if on mac)
+
+    express -- pug - git
+    npm install -g express-generator
+    npm install
+    npm install axios --save
+
+The point of the big huge API is to go out to the internet to retrieve information.
+
+.json - JavaScript Object Notation
+
+The purpose of an API call is to return information requsted.
+
+Remember you DataBase training Luke!
+------------------------------------
+
+varchar(50) - sets a character string with a maximum value of 50 characters
+integer(5) - sets a int string with max value of 5
+
+                999
+|____________|_________|___________|
+    10             3        9
+
+Use json pretty print [https://jsonformatter.org/json-pretty-print] to turn this 
+
+    {"noun":{"syn":["news","intelligence","tidings","discussion","give-and-take","parole","word of honor","Son","Word","Logos","password","watchword","countersign","Bible","Christian Bible","Book","Good Book","Holy Scripture","Holy Writ","Scripture","Word of God","arcanum","computer memory unit","hypostasis","hypostasis of Christ","info","information","language","language unit","linguistic unit","oral communication","order","positive identification","promise","religious text","religious writing","sacred text","sacred writing","secret","speech","speech communication","spoken communication","spoken language","statement","voice communication"]},"verb":{"syn":["give voice","formulate","phrase","articulate","evince","express","show"]}}
+
+Into this 
+
+        {
+        "noun": {
+            "syn": [
+            "news",
+            "intelligence",
+            "tidings",
+            "discussion",
+            "give-and-take",
+            "parole",
+            "word of honor",
+            "Son",
+            "Word",
+            "Logos",
+            "password",
+            "watchword",
+            "countersign",
+            "Bible",
+            "Christian Bible",
+            "Book",
+            "Good Book",
+            "Holy Scripture",
+            "Holy Writ",
+            "Scripture",
+            "Word of God",
+            "arcanum",
+            "computer memory unit",
+            "hypostasis",
+            "hypostasis of Christ",
+            "info",
+            "information",
+            "language",
+            "language unit",
+            "linguistic unit",
+            "oral communication",
+            "order",
+            "positive identification",
+            "promise",
+            "religious text",
+            "religious writing",
+            "sacred text",
+            "sacred writing",
+            "secret",
+            "speech",
+            "speech communication",
+            "spoken communication",
+            "spoken language",
+            "statement",
+            "voice communication"
+            ]
+        },
+        "verb": {
+            "syn": [
+            "give voice",
+            "formulate",
+            "phrase",
+            "articulate",
+            "evince",
+            "express",
+            "show"
+            ]
+        }
+        }
+
+The purpose of and API is undertancd where the endpoint ends, specifics of the request.
+BABB SAID THIS CONCEPT IS FUNDEMTAL TO UNDERSTANDING THE COURSE
+
+OKay, now how do i use all this?
+--------------------------------
+
+look at controller\main.js in Babbs code [lines 24 - 28], Its all about request and reposne 
+
+        // https://words.bighugelabs.com/site/api
+            axios.all([
+                axios.get("https://words.bighugelabs.com/api/2/" + BHL_KEY + "/" + req.body.ptraits + "/json"), <------ Request
+                axios.get("https://words.bighugelabs.com/api/2/" + BHL_KEY + "/" + req.body.ntraits + "/json")  <------ Request
+            ]).then((responses) => { <--------- responses (bundled)
+
+One of things we need to get used to is the Asynchronous nature of the internet (latency)
+
+latecy is the delay between request and response, gonna have to get used to promises. 
+
+A promise is a request to return information once all prerequisites have been met.
+            (Ex; Find out what everyone in the office wants for lunch and get back to me)
+            (Ex; Find out the IP addresses of those switches and get back to me)
+
+THe crux is the function NICKNAME goes and gets the nickname in app_server\views with a form 
+
+We are not ready to read from databases yet, so we will create a hard coded db within the application.
+
+Babbs code uses es6
+
+const and let 
+    const is constant is something that is predicted to never change
+    let is something subject to change
+
+In pug template if you want some arbitrary javascript place a negative 
+
+    block content
+
+        - let words = ["one", "two", "three"];
+        // below is a block-level unbuffered code block - https://github.com/pugjs/pug/issues/502#issuecomment-137893041
+        -
+            let negative_traits = [
+            "aloof","apathetic","callous","cheerless","closed","cold","combative","conceited",
+            "constricting","controlling","cowering","dependent","dishonest","distant","fearful",
+            "fleeting","gloomy","grumpy","guarded","hostile","immature","impolite","impractical",
+            "inconsiderate","indecisive","indecisive","indifferent","indulgent","insecure",
+            "insincere","intolerant","jealous","lazy","mean","mistrusting","naïve","ostentatious",
+            "pessimistic","petty","resentful","rigid","rude","scattered","secretive","selfish",
+            "self-satisfied","sour","stubborn","tardy","thoughtless","uncaring","uncommitted",
+            "uncooperative","unenthusiastic","unfeeling","ungrateful","unhelpful","unmotivated",
+            "unreceptive","unreliable","unsympathetic","vain","wasteful",
+            ];
+
+A book walks you through concepts, a video or web page walks you through solutions
+
+
+Dont waste time style a web page, focus on functionality and usuability first, then style.
+
+
+Now we need to run Its
+
+Place your API Key into a .env file
+
+IN your project create a .env file (stands for enviroment variable).
+Inside the file create this lines
+
+    BHL_KEY=<YOUR API KEY>
+
+Be sure to use 2 adjectives and avoid synonyms when using the big thesaurus API
+
+
+Class Questions
+-------------------------
+
+Dont use any positive negative traits, use a differnt theory (optional)
+Dont use Adjective + Synonym combination (Ex; use approximate or descriptive adjective.) not an adjective 
+dont use positive, negative traits boxes, or Babbs list 
+
+
+
+

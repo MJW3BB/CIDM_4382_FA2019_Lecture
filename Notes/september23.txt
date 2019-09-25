@@ -1,0 +1,26 @@
+// CIDM-4382 Notes
+    - September 23, 2019
+
+Node modules are required in order to run back-end dependencies on a web application
+
+Heroku does the same thing as AWS and Azure (PaaS, Saas)
+Heroku will be the MEAN deployment strategy
+
+When using the authours code be sure to download the .zip (DO NOT CLONE)
+    If you clone you can delete the .git to disable the tracking
+    git init after deleting authours .git stuff
+
+Install Heroku 'npm i -g heroku' or download from website if on windows
+see https://devcenter.heroku.com/articles/heroku-cli#download-and-install
+
+RTFM: https://devcenter.heroku.com/categories/reference
+      https://devcenter.heroku.com/
+
+Applications like heroku give you the ability to run a "server" without having to buy physical hardware and configure settings
+
+1. Download and install Heroku on your machine
+2. Create a Heroku account https://signup.heroku.com/
+3. Install heroku (npm install -g heroku) to your project
+4. create a project https://dashboard.heroku.com/apps
+5. heroku create 
+

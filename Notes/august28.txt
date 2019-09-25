@@ -1,0 +1,59 @@
+// CIDM-4382 Notes
+    - August 28, 2019
+
+- 3 Questions
+    + What gets shipped to the web browser?
+    + What lives in the client?
+    + What gets shipped to the client?
+
+- The main point is to send HTML, CSS, and JS to the browser
+
+++ Getting MEAN Chapter 01 ++
+- Tools
+    + MongoDB - Database (stores JSON like data)
+    + Express - Backend web framework
+    + Angular - Front-end web framework
+    + Node.js - web server and server side execution environment
+    + Why? (YOU DONT KNOW ENOUGH JAVASCRIPT)
+
+- Create a virtual document object model (VDOM) in front of the real one (DOM) in order to control things more precisley.
+
+- Front-end Vs. Back-end (and Full Stack)
+    + There is a divergence from back-end and front-end
+        * Back-end
+            > Logistics and Functionality based
+        * Front-end
+            > UX and UI Design, Aesthetic, etc...
+        * Full-Stack
+            > Does both
+
+- Database - MongoDB
+- Application Server 
+    + Node.js and Express
+        * Language: JavaScript 
+- Front end - Angular 
+    + Language: TypeScript
+
+- Multi-threaded is worse than single threaded as dupicate entires can be made (Chaos)
+
+- Mongoose
+    + MongoDB --> Mongoose --> Applications
+                * Connections
+                * Schemas
+                * Queries
+                * Validations
+                * Aggregations
+                * etc...
+- Angular
+    + Single-Page-Architecture
+    + Batteries included and opionated framework
+        * jQuery by comparison is a library
+    + DOM manipulation
+    + Two-way data binding
+    + TypeScript
+    + Webpage changes will indicate changes on the server
+
+- Use CodePen and w3 schools to create a name generator with basic javascript 
+
+
+
