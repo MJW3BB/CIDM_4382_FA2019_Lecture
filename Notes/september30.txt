@@ -106,3 +106,5 @@ const locationInfo = (req, res) => {
         ]
       }
     }
+
+The long tail is a business strategy that allows companies to realize significant profits by selling low volumes of hard-to-find items to many customers, instead of only selling large volumes of a reduced number of popular items.
