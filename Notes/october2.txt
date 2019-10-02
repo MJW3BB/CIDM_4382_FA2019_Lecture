@@ -1,0 +1,323 @@
+// CIDM-4382 Notes
+    - Septemeber 30, 2019
+
+Purpose of October is to learn MongoDB, November is to get comfy with Angular
+
+- Think about data and how it structures a document instead of breaking town into tables
+- In 3312, we would often make an Object in code, storage you work with tables
+
+    Code        Storage --\>
+    |               |           MongoDB - Documents
+    Object <--> Table   --/>
+
+Ex: There is a strucutre, but not in the same way that others are. (Excel is not strucuted the same as Wikipedia)
+
+- A document can be fluid (Varying in size, word count, etc...)
+
+This week we move towards the project by looking at MongoDB and Mongoose
+Then we will head towards the project (Homework will be in service of the project)
+
+What is MongoDB? https://www.mongodb.com/
+- Stores a bunch of documents in a structured way 
+
+*Be sure to look at Simon and Clive's code for Mongoose https://github.com/cliveharber/gettingMean-2/tree/chapter-05
+    - Its easy to think of the view as something exported from the controller form a model
+    - The view is the ability to encapsulate the ability of the view needs
+    - The view component makes it possible to see data relevant to the transaction
+    - The template must be shaped 
+
+    Look at views/templates, the purpose is to send data to it and read data out of the object and insert into the template.
+
+If you dont send data to the templates, the template is useless
+If you have the data and no template, its harder to read
+
+so controllers\locations for example looks like This
+
+                    const homelist = (req, res) => {
+                    res.render('locations-list', { title: 'Home' });
+                    };
+
+                    const locationInfo = (req, res) => {
+                    res.render('location-info', { title: 'Location Info' });
+                    };
+
+                    const addReview = (req, res) => {
+                    res.render('location-review-form', { title: 'Add review' });
+                    };
+
+                    module.exports = {
+                    homelist,
+                    locationInfo,
+                    addReview
+                    };
+
+*This data gets send to the template
+
+How can we deal with data we receive in a different strucuture? (Most data is square structure)
+- Ex: An order can have customer name, address, phone, credit card number, etc...
+
+In the authours code, the routes have a controller that brokers everything
+Controller is there the enforce the business rules of the application**
+Model is means to shape and be in front of how data will be stored
+
+            McDonalds Drive Thru
+            ---------------------
+            Interface: Order window and pay windows
+            *Stuffs happen
+            Result: You get food
+
+We want to use Mongoose and Node/ Express to send data to a database or MongoDB 
+--------------------------------------------------------------------------------
+Express and PUG - Back-end, data
+Angular - Front-end, template/view
+
+Database --> Application --> Browser Application
+MongoDB --> Mongoose --> Node.js, Express --> AngularJD
+
+**Mongoose is an Object Document Mapper, ODM
+MongoDB does not work like SQL and table, it used a file strucuture similar to desktop operating systems
+
+        Collection - Contains many documents
+        Document - Each document contains data, defined by a schema
+        Schema - Each SChema is made up of a number of paths
+        Path - Each path can have multiple defining properties
+
+Each document can have one or more schemas (Think of subfolder)
+    - You can create an infinite amount of sub-folders or paths for a file/document, same in MongoDB
+    - Facilitates letting the browser do all the work
+
+In a collection you have no gauruntee that one document will be different from another, so you need to be able acces multiple items
+
+MongDB Document Vs. Mongoose Schema
+    - Mongoose puts an id in every documents
+        
+See slide 10 in Getting MEAN Chapter 5 Notes
+
+You find objects based on name of collection to query and an optional object providing query parameters
+
+        db.CollectionName.Find.(QueryObject)
+                    or
+        db.CollectionName.Save.(QueryObject)
+
+Talk to the DB through URLS
+
+        mongodb://usernmae.password@localhost:27027/database
+                                    |--------------|
+                                    Use the URL Mongo gives
+
+Monday we might just practice with Queries with MongoDB collections
+
+Need to create a mongoDB atlas account to play the game monday morning (its free)
+    - Take the free route, dont go to the pay zone
+    - https://www.mongodb.com/
+
+The book assumes you will be working from a local database, in this class we will not
+
+2 Things
+----------------------------------
+    1. Code review from authours
+    2. Understand nature of October project
+
+Take a look at Chapter 5 of Getting-MEAN (https://github.com/cliveharber/gettingMean-2/tree/chapter-05)
+
+Docker is for conatinerization (used in 4390) 
+    You can take a USB from one place to another and have no issues
+    Similarly, you can take a code project, dependencies, and other things in a metaphorical USB 
+
+App.js has some things going on
+
+                        const createError = require('http-errors');
+                        const express = require('express');
+                        const path = require('path');
+                        const cookieParser = require('cookie-parser');
+                        const logger = require('morgan');
+                        const favicon = require('serve-favicon');
+                        require('./app_server/models/db');      `           <-- Application Requires a connection to Mongoose 
+
+                        const indexRouter = require('./app_server/routes/index');
+                        const usersRouter = require('./app_server/routes/users');
+
+                        const app = express();
+
+                        // view engine setup
+                        app.set('views', path.join(__dirname, 'app_server', 'views'));
+                        app.set('view engine', 'pug');
+
+                        app.use(logger('dev'));
+                        app.use(express.json());
+                        app.use(express.urlencoded({ extended: false }));
+                        app.use(cookieParser());
+                        app.use(express.static(path.join(__dirname, 'public')));
+
+                        app.use('/', indexRouter);
+                        app.use('/users', usersRouter);
+
+                        // catch 404 and forward to error handler
+                        app.use(function(req, res, next) {
+                        next(createError(404));
+                        });
+
+                        // error handler
+                        app.use(function(err, req, res) {
+                        // set locals, only providing error in development
+                        res.locals.message = err.message;
+                        res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+                        // render the error page
+                        res.status(err.status || 500);
+                        res.render('error');
+                        });
+
+                        module.exports = app;
+
+                        W
+
+
+We now have a DB.js in Controllers\Models\db.js
+------------------------------------------------
+                        const mongoose = require('mongoose');               
+                        const host = process.env.DB_HOST || '127.0.0.1'         <--- Uses .env file to hide API key
+                        const dbURL = `mongodb://${host}/Loc8r`;
+                        const readLine = require('readline');
+
+                        const connect = () => {
+                        setTimeout(() => mongoose.connect(dbURL, { useNewUrlParser: true, useCreateIndex: true }), 1000);
+                        }
+
+                        mongoose.connection.on('connected', () => {
+                        console.log('connected');
+                        });
+
+                        mongoose.connection.on('error', err => {
+                        console.log('error: ' + err);
+                        return connect();
+                        });
+
+                        mongoose.connection.on('disconnected', () => {
+                        console.log('disconnected');
+                        });
+
+                        if (process.platform === 'win32') {
+                        const rl = readLine.createInterface({
+                            input: process.stdin,
+                            output: process.stdout
+                        });
+                        rl.on ('SIGINT', () => {
+                            process.emit("SIGINT");
+                        });
+                        }
+
+                        const gracefulShutdown = (msg, callback) => {
+                        mongoose.connection.close( () => {
+                            console.log(`Mongoose disconnected through ${msg}`);
+                            callback();
+                        });
+                        };
+
+                        process.once('SIGUSR2', () => {
+                        gracefulShutdown('nodemon restart', () => {
+                            process.kill(process.pid, 'SIGUSR2');
+                        });
+                        });
+                        process.on('SIGINT', () => {
+                        gracefulShutdown('app termination', () => {
+                            process.exit(0);
+                        });
+                        });
+                        process.on('SIGTERM', () => {
+                        gracefulShutdown('Heroku app shutdown', () => {
+                            process.exit(0);
+                        });
+                        });
+
+                        connect(); <-- Verifies databse connections
+
+                        require('./locations'); <-- Requires connection to specific location
+
+Now look at the locations.js
+-----------------------------
+                        const mongoose = require('mongoose');
+
+                        const openingTimesSchema = new mongoose.Schema({
+                        days: {
+                            type: String,
+                            required: true
+                        },
+                        opening: String,
+                        closing: String,
+                        closed: {
+                            type: Boolean,
+                            required: true
+                        }
+                        });
+
+                        const reviewSchema = new mongoose.Schema({
+                        author: String,
+                        rating: {
+                            type: Number,
+                            required: true,
+                            min: 0,
+                            max: 5
+                        },
+                        reviewText: String,
+                        createdOn: {
+                            type: Date,
+                            'default': Date.now
+                        }
+                        });
+
+                        const locationSchema = new mongoose.Schema({
+                        name: {
+                            type: String,
+                            required: true
+                        },
+                        address: String,
+                        rating: {
+                            type: Number,
+                            'default': 0,
+                            min: 1,
+                            max: 5
+                        },
+                        facilities: [String],
+                        coords: {
+                            type: { type: String},
+                            index: [Number]
+                        },
+                        openingTimes: [openingTimesSchema],
+                        reviews: [reviewSchema]
+                        });
+
+                        locationSchema.index({coords: '2dsphere'});
+
+                        mongoose.model('Location', locationSchema);
+
+ - The data is square just like how you would make in MS Excel
+ - Refer to (https://mongoosejs.com/)
+ - Reach for the doumentation
+
+ Buffer stores a stream of bytes (For pictures, numeric information contains an array of data, so snapchat uses this)
+  - Ex; 1080px1080p photo has 1166400 pixels, and therefore 1166400 bytes of data
+
+Each key in our code blogSchema defines a property in our documents which will be cast to its associated SchemaType. For example, we've defined a property title which will be cast to the String SchemaType and property date which will be cast to a Date SchemaType. Keys may also be assigned nested objects containing further key/type definitions like the meta property above.
+
+The permitted SchemaTypes are:
+------------------------------
+        String
+        Number
+        Date
+        Buffer
+        Boolean
+        Mixed
+        ObjectId
+        Array
+        Decimal128
+        Map
+
+Learn to RTFM 
+
+
+Monday morning we will take the data in the locations.js file and create a schema in excel (reverse engineer)
+Submit that schema at the end of monday and show babb to get a homework grade. 
+
+
+
