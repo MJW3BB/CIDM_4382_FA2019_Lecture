@@ -35,16 +35,23 @@ download babs "nickname code" from his repo https://github.com/ahuimanu/CIDM4382
 
 Install needed dependencies (use sudo if on mac)
 
+<<<<<<< Updated upstream
     npm install
     npm install -g express-generator
     express -- pug - git
     npm install axios --save
+=======
+    1.) npm install -g express-generator
+    2.) express -- pug - git
+    3.) npm install
+    4.) npm install axios --save
+>>>>>>> Stashed changes
 
 The point of the big huge API is to go out to the internet to retrieve information.
 
 .json - JavaScript Object Notation
 
-The purpose of an API call is to return information requsted.
+The purpose of an API call is to return information requested.
 
 Remember you DataBase training Luke!
 ------------------------------------
