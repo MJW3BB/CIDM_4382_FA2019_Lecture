@@ -1,0 +1,98 @@
+// CIDM-4382 Notes
+    - October 7, 2019
+
+Making MongoDB Schema and Project details
+
+Scheme - Specifies what goes into the application
+Class - Specifies what goes up to MongoDB
+
+Utilize the request/response of an API (Appliation Programming Interface)
+Representational State Transfer (RST)
+
+URL Paths and API Specification
+
+
+
+Exposing and Consuming an API
+-------------------------------
+With MongoDB in place, we want to:
+    Implement CRUD functionality with HTTP verbs
+        GET
+        POST
+        PUT
+        DELETE
+        Because ports 80 and 443 are likely to be open in your organization
+Use Node, Express, and Mongoose to implement a persistence strategy
+
+REST API
+------------
+Representational State Transfer
+Applications Programming Interface (API)
+
+Response Strategy
+---------------------
+Two Key Components
+    Returned Data
+        JSON with Data
+        JSON with error data
+            Including HTTP Response Code
+        Null
+
+
+RTFM - https://mongoosejs.com/docs/api.html
+
+Lets get started
+
+http://status.vatsim.net/ 
+
+We are going to create something similar to https://www.vattastic.com/
+
+cron = sets data to refresh at a set interval
+
+Learn to use cron - https://crontab.guru/
+
+Take a look at the VATSIM Harvester in Babbs Code  
+
+        this.callsign = callsign;
+        this.cid = cid;
+        this.realname = realname;
+        this.clienttype = clienttype;
+        this.frequency = frequency;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.altitude = altitude;
+        this.groundspeed = groundspeed;
+        this.planned_tascruise = planned_tascruise;
+        this.planned_depairport = planned_depairport;
+        this.planned_altitude = planned_altitude;
+        this.planned_destairport = planned_destairport;
+        this.server = server;
+        this.protrevision = protrevision;
+        this.rating = rating;
+        this.transponder = transponder;
+        this.facilitytype = facilitytype;
+        this.visualrange = visualrange;
+        this.planned_revision = planned_revision;
+        this.planned_flighttype = planned_flighttype;
+        this.planned_deptime = planned_deptime;
+        this.planned_actdeptime = planned_actdeptime;
+        this.planned_hrsenroute = planned_hrsenroute;
+        this.planned_minenroute = planned_minenroute;
+        this.planned_hrsfuel = planned_hrsfuel;
+        this.planned_minfuel = planned_minfuel;
+        this.planned_altairport = planned_altairport;
+        this.planned_remarks = planned_remarks;
+        this.planned_route = planned_route;
+        this.planned_depairport_lat = planned_depairport_lat;
+        this.planned_depairport_lon = planned_depairport_lon;
+        this.planned_destairport_lat = planned_destairport_lat;
+        this.planned_destairport_lon = planned_depairport_lon;
+        this.atis_message = atis_message;
+        this.time_last_atis_received = time_last_atis_received;
+        this.time_logon = time_logon;
+        this.heading = heading;
+        this.QNH_iHg = QNH_iHg;
+        this.QNH_Mb = QNH_Mb;
+    }
+
+Be prepared for wednesday make a schema and then babb will assign Project
