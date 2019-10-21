@@ -953,7 +953,7 @@ Babbs Database credentials:
 
 This is a Babb led Project, we have full permission to work together and steal his CODE
 
-When we are given out project we must use our own code and ideas
+When we are given our own project we must use our own code and ideas
 
 Come up with a schema
 

@@ -1,0 +1,40 @@
+// CIDM-4382 Notes
+    - October 21, 2019
+
+*Express gives us the ability to serve HTTP (Request and Response)
+*Parse request 
+
+https://feedly.com/
+
+https://feedly.com/i/welcome
+
+Mongoose allows CRUD to database
+
+C - POST
+R - GET 
+U - PATCH
+D - DELETE
+
+Pick a air traffic zone in order to filter data size 
+https://en.wikipedia.org/wiki/Area_control_center
+
+I choose zone ZNY
+
+Be sure to filter before you commit to the database, on the WRITE
+
+For my zone, i will need to be sure to throttle and filter on the read ad NY is a busy place
+
+https://www.vatsim.net/vatsim-regions
+
+https://www.nyartcc.org/ - ZNY ARTCC 
+
+reference gettingMean-2 Chapter 5 and 6 branch.
+
+Express API reference https://expressjs.com/en/api.html
+
+www file line 68 says ("Listening On...")
+
+The problem with the web is that there is latency between your query and response 
+
+export module.export, call task in onListening
+
