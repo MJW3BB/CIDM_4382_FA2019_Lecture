@@ -1,0 +1,20 @@
+// CIDM-4382 Notes
+    - October 21, 2019
+
+Sauce - https://github.com/ahuimanu/CIDM4382-Fall2019
+
+https://www.nyartcc.org/ - ZNY ARTCC 
+
+*List of Airports*
+- https://en.wikipedia.org/wiki/List_of_airports_in_New_York
+
+
+https://www.npmjs.com/package/node-cron - understand use of node-cron to schedule tasks
+
+We want a cron job to run out and perform these tasks (On/Off Button)
+*Read from VATSIM
+*Parse
+*Store parsed data in MongoDB
+
+People must be able to query the collected data with endpoints (Express)
+
