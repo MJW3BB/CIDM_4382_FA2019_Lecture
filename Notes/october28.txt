@@ -1,0 +1,14 @@
+// CIDM-4382 Notes
+    - October 28, 2019
+
+MongoDB --> Query --> Object Document Mapper (ODM) --> CRUD
+
+C - POST
+R - GET
+U - PUT/PATCH
+D - DELETE
+
+Mongoose documentation - https://mongoosejs.com/docs/index.html
+
+1. Setup for get request 
+
