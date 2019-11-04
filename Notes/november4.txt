@@ -1,0 +1,80 @@
+// CIDM-4382 Notes
+    - November 4, 2019
+
+- Need to decide on project idea by Nov. 11
+
+- The topic of the class has now switched to Angular
+
+Front end frameworks to get you a job
+    - Angular
+    - React
+    - Vue
+
+Front-End-Framework --> Uses JavaScript --> Virtual DOM --> Binds data
+    - Start Chapter 8 on the Book**
+
+MongoDB --> Web Server (Express) (HTTP Request) --> Display results in browser (Front-end)
+    - Goal is to offer HTTP endpoints for front end use on a website
+
+Think about and articulate project
+
+    - Angular Tasks
+        1.) - Tour of Heroes - https://angular.io/tutorial
+        2.) - Chapter 8 in the book
+
+    - Project component requirements
+        - MongoDB Database
+        - Web Server (REST Endpoints)
+        - Cloud API (Someone elses API, maybe Extreme?)
+            - Ex; VATSIM, Weather, etc...
+
+Angular 
+    - Uses components and how do I use them?
+    - Modularity and the ability to create modules
+    - Creates a Virtual DOM --> Client side JS/TS framework [VDOM and data binding]
+        Anytime data changes on the front or back-end the other is notified of said changes and writes them
+    - 
+
+MongoDB (schema) + generic API --> Web Server --> Internet --> Front-End 
+    - 1.) Create a schema
+    - 2.) Use a API to push data up to a web Server
+    - 3.) Take the data placed on the web server and show it on a front-end web interface
+    - 4.) Format the data to be visually appealing 
+
+    https://emc.extremenetworks.com/content/oneview/docs/connect/docs/c_ov_connect_services.html
+
+    DO NOT USE ANGULAR JS!! IT WILL BE EUTHANIZED 
+
+Gettins started w/ Angular 
+    - ng lists all available commands for Angular 
+    - npm install -g @angular/cli
+    - ng new <ProjectName>
+    - y
+    - Choose "CSS"
+    - ng serve 
+    - go to http://localhost:4200/
+
+    - ng generate component <componentName> - adds components to src/app/
+
+
+No class on wednesday, project review on monday. Start on project 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
