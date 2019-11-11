@@ -1,0 +1,41 @@
+// CIDM-4382 Notes
+    - November 11 ,2019
+
+Schedule for project
+
+    11/11 - Idea & Catchup
+
+    11/13 - Angular Fundemntals
+
+    11/18 - Connect Backend to Angular 1
+
+    11/20 - Connect to Backend to Angular 2
+
+    11/25 - Complete VATSIM App 1
+
+    11/27 - Complete VATSIM App 2 **Canceled
+
+    12/2 - My Project
+
+    12/4 - My Project
+
+    12/9 - Present your work
+
+As a class we are in Ch. 8 and 9 (more on 9)
+
+The goal is to finish the VATSIM project
+Do the tour of heroes
+Review the Ch.8 project in the book
+
+Establish a project idea by wednesday / subm it dropbox
+
+What URL for the API
+What is the types of things you anticipate to filter 
+What is the interval which data updates
+What endpoints would you expose so that people on your end are able to ask
+What mongo schema or DB schema looks like?
+    What data, atributes, tables, relationships, etc...
+
+Storyboard your idea 
+
+
