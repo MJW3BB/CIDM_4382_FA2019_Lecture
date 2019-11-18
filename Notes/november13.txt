@@ -1,0 +1,10 @@
+// CIDM-4382 Notes
+    - November 11, 2019
+
+Next week is MUCHO IMPORTANTE to be present for.
+
+Do you understand the endpoint stuff?
+
+Bring up mongoDB account
+
+*edit system enviroment variables and add mongoDB\bin

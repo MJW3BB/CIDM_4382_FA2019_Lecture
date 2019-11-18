@@ -1,0 +1,66 @@
+// CIDM-4382 Notes
+    - November 18, 2019
+
+Only 5 days left for classes!
+
+The main focus of the project is "CAN YOU READ/WRITE TO A DATABASE THROUGH A API?"
+
+The MongoDB Method
+--------------------
+** Database (MongoDB) --> API (Express, Node.js) --> Express App or Angular App **
+
+SPA = Single Page Architecture
+
+Need to be able to walkthrough chapter 7,8,9
+
+Using Axios or another library, grab data from your API and regularly updates your library
+
+Must use an API that updates frequently 
+
+*install mongoDB on PC at home
+
+
+
+Edit system environments varbiables\path\new\map to mongoDB * allows mongoDB commands to be inputted
+
+add connection string to
+
+mongo "mongodb+srv://cluster0-rl8bd.mongodb.net/test"  --username <admin>
+                                                  | Database we want to connect to
+
+
+
+https://docs.mongodb.com/
+
+https://docs.mongodb.com/manual/mongo/
+
+db.test.insertOne ({
+        "realname" : "JOE SMITH",
+        "clienttype": "PILOT",
+        "planned_depairport": "KMIA",
+        "altitude": "1000"
+
+    }
+)
+
+
+
+db.test.insertOne ({
+        "name" : "Pikachu",
+        "type": "Electric",
+        "weak to": "Water",
+        "evolutionPath": "Pikachu --> Raichu"
+
+    }
+)
+
+
+Can we throw up an endpoint, connect to the DB, and then spit out something that comes from MongoDB?
+
+db.test.updateOne( { "realname" : "John Smith" }, {$set: {"Violations" : 3}})
+
+db.test.remove({"realname":"Joe Smith"},{justOne: true});
+
+
+The project MUST use Controllers, Models, and Routes (look at the api in ch8 of getting mean)
+
