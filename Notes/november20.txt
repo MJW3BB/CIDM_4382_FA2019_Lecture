@@ -1,0 +1,35 @@
+// CIDM-4382 Notes
+    - November 20, 2019
+
+
+C - POST
+R - GET
+U - PUT
+D - DELETE
+
+Mongoose/ MongoDB (Document Object Viewer)
+
+
+mkdir CIDM4382_20191120
+cd CIDM4382_20191120
+express --pug --git
+nodemon
+npm install -g express-generator
+npm install dotenv --save 
+
+allow ch. 7 to guide your troubles
+
+github.com/cliveharber
+
+
+var clientScheme = new mongoose.Schema(
+	{
+		realname: 'string',
+		clienttype: 'string',
+		planned_depairport: 'string',
+		planned_destairport: 'string',
+		altitude: 'string'
+	}
+);
+
+npm install dotenv --save
