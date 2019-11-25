@@ -1,5 +1,5 @@
 {
-  "name": "vatsimharvester",
+  "name": "nickname",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,10 +11,9 @@
     "debug": "~2.6.9",
     "dotenv": "^8.1.0",
     "express": "~4.16.1",
+    "express-validator": "^6.2.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "node-cron": "^2.0.3",
-    "nodemon": "^2.0.1",
     "pug": "2.0.0-beta11"
   }
 }

@@ -1,0 +1,6 @@
+// CIDM-4382 Notes
+    - November 25, 2019
+
+Use Navbar from bootstrap
+
+Project is due on Decemb er 9th @ 10:15
