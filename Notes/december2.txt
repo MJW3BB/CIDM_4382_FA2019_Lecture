@@ -1,0 +1,7 @@
+// CIDM-4382 Notes
+    - December 2, 2019
+
+The only way Babb will pass you in this course is if you can prove that you can consume an API and print it to a front end web service.
+
+VATSIM harvester 
+
