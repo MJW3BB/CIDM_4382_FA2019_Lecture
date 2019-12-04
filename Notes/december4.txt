@@ -1,0 +1,15 @@
+// CIDM-4382 Notes
+    - December 4, 2019
+
+Checklist
+-----------------------------
+Can you grab data from an api?
+Can you write that data to MongoDB?
+
+
+That main purpose of this assignment is to have an API talk to a DB!
+
+1. ) API -> Pull data
+2. ) Write to DB
+3. ) data from your API -> Front End Site
+
